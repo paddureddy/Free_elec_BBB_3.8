@@ -53,3 +53,8 @@ obj-$(CONFIG_GPEVT)		+= gpevt.o
 obj-$(CONFIG_GROVE_I2C)		+= grove-i2c.o
 obj-$(CONFIG_TIEQEP)      += tieqep.o
 obj-y				+= cape/
+
+#adde by paddu for hello_version
+obj-$(CONFIG_HELLO_VERSION)     +=hello_version.o
+
+
