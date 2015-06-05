@@ -1,0 +1,36 @@
+Device-Tree bindings for tilcdc DRM driver
+
+Required properties:
+ - compatible: value should be "ti,am33xx-tilcdc".
+ - interrupts: the interrupt number
+ - reg: base address and size of the LCDC device
+
+Recommended properties:
+ - interrupt-parent: the phandle for the interrupt controller that
+   services interrupts for this device.
+ - ti,hwmods: Name of the hwmod associated to the LCDC
+
+Optional properties:
+ - max-bandwidth: The maximum pixels per second that the memory
+   interface / lcd controller combination can sustain
+ - max-width: The maximum horizontal pixel width supported by
+   the lcd controller.
+ - max-pixelclock: The maximum pixel clock that can be supported
+   by the lcd controller in KHz.
+ - bgrx_16bpp: Swap blue and red to work around the TI Sitara
+   erratum -- some LCD capes for BeagleBone Black output BGR in
+   16bpp mode so that 24 and 32bpp modes output "correct" color.
+ - bgrx_24bpp: Swap blue and red to work around the TI Sitara
+   erratum (should normally be used)
+
+Example:
+
+	fb: fb@4830e000 {
+		compatible = "ti,am33xx-tilcdc";
+		reg = <0x4830e000 0x1000>;
+		interrupt-parent = <&intc>;
+		interrupts = <36>;
+		ti,hwmods = "lcdc";
+		bgrx_24bpp;
+		bgrx_16bpp;
+	};
