@@ -1,0 +1,40 @@
+From cd0dad71be18bb6ab44914e505616eb401ab7d3f Mon Sep 17 00:00:00 2001
+From: Jonathan Piat <piat.jonathan@gmail.com>
+Date: Mon, 28 Apr 2014 23:14:32 +0200
+Subject: [PATCH 31/38] Adding Logibone to cape support list
+
+---
+ arch/arm/boot/dts/am335x-bone-common.dtsi | 10 ++++++++++
+ 1 file changed, 10 insertions(+)
+
+diff --git a/arch/arm/boot/dts/am335x-bone-common.dtsi b/arch/arm/boot/dts/am335x-bone-common.dtsi
+index a9dc1dc..28fd800 100644
+--- a/arch/arm/boot/dts/am335x-bone-common.dtsi
++++ b/arch/arm/boot/dts/am335x-bone-common.dtsi
+@@ -211,6 +211,7 @@
+ 				part-number = "BB-BONE-GPS-01";
+ 			};
+ 
++
+ 			/* Beaglebone black has it soldered on */
+ 			 slot@100 {
+ 				ti,cape-override;
+@@ -406,6 +407,15 @@
+ 				};
+ 			};
+ 
++			/* LOGIBONE cape */
++			cape@16 {
++				part-number = "BB-BONE-LOGIBONE";
++				version@00R1 {
++					version = "00R1";
++					dtbo = "BB-BONE-LOGIBONE-00R1.dtbo";
++				};
++			};
++
+ 		};
+ 	};
+ 
+-- 
+1.9.1
+
