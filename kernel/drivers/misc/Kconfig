@@ -521,6 +521,15 @@ config TIEQEP
 
 	  To compile this driver as a module, choose M here: the module
 	  will be called tieqep.
+config HELLO_VERSION
+       tristate "HELLO_VERSION is the hello mdoule"
+       depends on ARM
+       default m if ARM
+       help
+         Driver support for hello_verion written by paddu
+         To compile this driver as a module,choose M here: the module will be called hello_version
+
+
 
 source "drivers/misc/c2port/Kconfig"
 source "drivers/misc/eeprom/Kconfig"
@@ -531,5 +540,7 @@ source "drivers/misc/carma/Kconfig"
 source "drivers/misc/altera-stapl/Kconfig"
 source "drivers/misc/mei/Kconfig"
 source "drivers/misc/cape/Kconfig"
+
+
 
 endmenu
