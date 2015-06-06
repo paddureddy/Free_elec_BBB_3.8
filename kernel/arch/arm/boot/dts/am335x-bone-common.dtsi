@@ -444,6 +444,22 @@
 	};
 };
 
+&i2c1 {  
+       status = "okay";
+       clock-frequency = <400000>;
+       pinctrl-names = "default";
+       pinctrl-0 = <&i2c1_pins>;
+
+       l3g4200d: l3g4200d@0x34 {
+
+             compatible = "l3g4200d,l3g4200d";
+             reg = <0x34>;
+       };
+
+
+
+};
+
 &i2c2 {
 	status = "okay";
 	pinctrl-names = "default";

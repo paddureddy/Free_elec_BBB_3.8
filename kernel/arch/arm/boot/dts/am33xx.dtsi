@@ -231,7 +231,7 @@
 
 		i2c1: i2c@4802a000 {
 			compatible = "ti,omap4-i2c";
-			#address-cells = <1>;
+                        #address-cells = <1>;
 			#size-cells = <0>;
 			ti,hwmods = "i2c2";	/* TODO: Fix hwmod */
 			reg = <0x4802a000 0x1000>;
